@@ -5,9 +5,21 @@ import java.awt.*;
  */
 public class Number extends Tile {
     int neighbors;
-
+    private Polygon hexagon;
     public Number(int posX, int posY) {
         super(posX, posY);
+        // sets the coordinates of the hexagon
+        hexagon = new Polygon();
+        int tileSize = 10;
+        posX = posX * 21;
+        posY = posY * 21 + posX / 2;
+        hexagon.addPoint(posX - tileSize/2, posY + tileSize);
+        hexagon.addPoint(posX + tileSize/2, posY + tileSize);
+        hexagon.addPoint(posX + tileSize, posY);
+        hexagon.addPoint(posX + tileSize/2, posY - tileSize);
+        hexagon.addPoint(posX - tileSize/2, posY - tileSize);
+        hexagon.addPoint(posX - tileSize, posY);
+
     }
 
     @Override
@@ -28,7 +40,7 @@ public class Number extends Tile {
     @Override
     public void paint(Graphics g) {
         if (!revealed) {
-            //TODO paint
+            g.fillPolygon(hexagon);
         } else {
             //TODO paint
         }
