@@ -1,12 +1,11 @@
 import javax.swing.*;
-import java.util.Iterator;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
 
 public class Main {
     public static void main(String[] args) {
-        world world = new world(5,5);
+        World world = new World(5,5);
 
         JFrame window = new JFrame("Example");
         MyCanvas canvas = new MyCanvas(world);
@@ -18,8 +17,8 @@ public class Main {
 }
 
 class MyCanvas extends Canvas {
-    world world;
-    public MyCanvas(world world) {
+    World world;
+    public MyCanvas(World world) {
         this.world = world;
         this.setBackground(Color.GREEN);
     }

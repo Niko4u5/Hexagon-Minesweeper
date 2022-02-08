@@ -3,9 +3,9 @@ import java.awt.*;
 /**
  * this Tile is the bomb when clicked it ends the Game.
  */
-public class bomb extends tile{
+public class Bomb extends Tile {
 
-    public bomb(int posX, int posY) {
+    public Bomb(int posX, int posY) {
         super(posX, posY);
     }
 

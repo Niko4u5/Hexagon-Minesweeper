@@ -3,10 +3,10 @@ import java.awt.*;
 /**
  * Goal of the Game is to click all of these, on Click they show the number of bombs next to them.
  */
-public class number extends tile{
+public class Number extends Tile {
     int neighbors;
 
-    public number(int posX, int posY) {
+    public Number(int posX, int posY) {
         super(posX, posY);
     }
 

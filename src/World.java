@@ -3,11 +3,11 @@ import java.awt.*;
 /**
  * contains all the tiles and manages aces to them.
  */
-public class world {
-    tile[] tiles;
+public class World {
+    Tile[] tiles;
     int sizeX, sizeY;
     int numbers; // number of tiles that need to be clicked.
-    world(int x,int y){
+    World(int x, int y){
         sizeX = x;
         sizeY = y;
         tiles = new tile[sizeY*sizeY];
@@ -16,7 +16,7 @@ public class world {
     }
 
     public void paint(Graphics g){
-        for (tile tile: tiles) {
+        for (Tile tile: tiles) {
             tile.paint(g);
         }
     }
