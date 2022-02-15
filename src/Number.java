@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -5,21 +6,9 @@ import java.awt.*;
  */
 public class Number extends Tile {
     int neighbors;
-    private Polygon hexagon;
-    public Number(int posX, int posY) {
-        super(posX, posY);
+    public Number(int posX, int posY, MyCanvas window, World world) {
+        super(posX, posY, window, world);
         // sets the coordinates of the hexagon
-        hexagon = new Polygon();
-        int tileSize = 10;
-        posX = posX * 21;
-        posY = posY * 21 + posX / 2;
-        hexagon.addPoint(posX - tileSize/2, posY + tileSize);
-        hexagon.addPoint(posX + tileSize/2, posY + tileSize);
-        hexagon.addPoint(posX + tileSize, posY);
-        hexagon.addPoint(posX + tileSize/2, posY - tileSize);
-        hexagon.addPoint(posX - tileSize/2, posY - tileSize);
-        hexagon.addPoint(posX - tileSize, posY);
-
     }
 
     @Override
@@ -40,9 +29,12 @@ public class Number extends Tile {
     @Override
     public void paint(Graphics g) {
         if (!revealed) {
+            //TODO: make prettier
+            g.setColor(Color.red);
             g.fillPolygon(hexagon);
         } else {
-            //TODO paint
+            g.setColor(Color.blue);
+            g.fillPolygon(hexagon);
         }
     }
 }

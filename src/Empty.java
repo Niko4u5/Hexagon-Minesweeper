@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 /**
  * this tile is used to fill space in the world array which aren't part of the game.
@@ -5,8 +6,8 @@ import java.awt.*;
  */
 public class Empty extends Tile {
 
-    public Empty(int posX, int posY) {
-        super(posX, posY);
+    public Empty(int posX, int posY, MyCanvas window, World world) {
+        super(posX, posY,window,world);
     }
 
     @Override

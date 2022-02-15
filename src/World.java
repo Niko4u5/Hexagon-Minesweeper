@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -7,10 +8,12 @@ public class World {
     Tile[] tiles;
     int sizeX, sizeY;
     int numbers; // number of tiles that need to be clicked.
-    World(int x, int y){
+
+    MyCanvas window;
+    World(int x, int y,MyCanvas window){
         sizeX = x;
         sizeY = y;
-        tiles = new tile[sizeY*sizeY];
+        this.window = window;
         //TODO: create tiles.
         //TODO: set numbers.
     }
@@ -23,9 +26,10 @@ public class World {
 
     public void gameOver(){
         //TODO
+        System.out.println("You lost");
     }
 
     public void repaint(){
-        //TODO
+        window.repaint();
     }
 }

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -5,8 +6,8 @@ import java.awt.*;
  */
 public class Bomb extends Tile {
 
-    public Bomb(int posX, int posY) {
-        super(posX, posY);
+    public Bomb(int posX, int posY, MyCanvas window, World world) {
+        super(posX, posY, window, world);
     }
 
     @Override
@@ -19,9 +20,12 @@ public class Bomb extends Tile {
     @Override
     public void paint(Graphics g) {
         if (!revealed) {
-            //TODO: paint
+            //TODO: make prettier
+            g.setColor(Color.red);
+            g.fillPolygon(hexagon);
         } else {
-            //TODO: paint
+            g.setColor(Color.orange);
+            g.fillPolygon(hexagon);
         }
     }
 }
