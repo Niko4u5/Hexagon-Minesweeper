@@ -10,6 +10,7 @@ public class World {
 
     MyCanvas window;
     World(int x, int y,MyCanvas window){
+        this.window = window;
         sizeX = x;
         sizeY = y;
         tiles = new Tile[sizeX][sizeY];
@@ -33,8 +34,12 @@ public class World {
     }
 
     public void paint(Graphics g){
-        for (Tile tile: tiles) {
-            tile.paint(g);
+        for (Tile[] tiles: tiles) {
+            for (Tile tile: tiles
+                 ) {
+                tile.paint(g);
+            }
+
         }
     }
 
