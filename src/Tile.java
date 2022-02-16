@@ -1,12 +1,9 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public abstract class Tile {
-    World world;
-    MyCanvas window;
-    Polygon hexagon;
-    JButton button;
+    final World world;
+    final Polygon hexagon;
     boolean flagged, revealed;
     /**
      * Converts array to display position.
@@ -16,7 +13,7 @@ public abstract class Tile {
      */
     public Tile(int posX, int posY, MyCanvas window, World world) {
         this.world = world;
-        this.window = window;
+
         // Converts array to display position.
         int spacing = 50;
         int w = (int)(Math.sqrt(3) * spacing / 2);

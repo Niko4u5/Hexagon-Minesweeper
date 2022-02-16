@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 
 /**
@@ -13,6 +12,7 @@ public class Number extends Tile {
 
     @Override
     public void onClick() {
+        //TODO: subtract 1 from world.numbers if not clicked before
         revealed = true;
         neighbors = calculateNeighbors();
         world.repaint();
@@ -33,6 +33,7 @@ public class Number extends Tile {
             g.setColor(Color.red);
             g.fillPolygon(hexagon);
         } else {
+            //TODO: show number
             g.setColor(Color.blue);
             g.fillPolygon(hexagon);
         }

@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 /**
  * this tile is used to fill space in the world array which aren't part of the game.

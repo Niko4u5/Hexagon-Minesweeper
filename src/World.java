@@ -4,11 +4,11 @@ import java.awt.*;
  * contains all the tiles and manages aces to them.
  */
 public class World {
-    Tile[][] tiles;
-    int sizeX, sizeY;
+    final Tile[][] tiles;
+    final int sizeX, sizeY;
     int numbers; // number of tiles that need to be clicked.
 
-    MyCanvas window;
+    final MyCanvas window;
     World(int x, int y,MyCanvas window){
         this.window = window;
         sizeX = x;
@@ -25,12 +25,12 @@ public class World {
             int i = (int)(Math.random() * sizeX);
             int j = (int)(Math.random() * sizeY);
 
-            if (tiles[i][j] instanceof Bomb){
-                return;
-            } else {
-                tiles[i][j] = new Bomb(i,j,window,this);
+            if (!(tiles[i][j] instanceof Bomb)) {
+                tiles[i][j] = new Bomb(i, j, window, this);
+                bombs--;
             }
         }
+        //TODO: set numbers variable
     }
 
     public void paint(Graphics g){
@@ -44,7 +44,7 @@ public class World {
     }
 
     public void gameOver(){
-        //TODO
+        //TODO: show game over screen
         System.out.println("You lost");
     }
 
