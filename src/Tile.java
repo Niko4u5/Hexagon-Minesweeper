@@ -18,18 +18,24 @@ public abstract class Tile {
         this.world = world;
         this.window = window;
         // Converts array to display position.
-        posX = posX * 21;
-        posY = posY * 21 + posX / 2;
+        int spacing = 50;
+        int w = (int)(Math.sqrt(3) * spacing / 2);
+        int h = spacing;
+
+        int X = posX * w * 2;
+        int Y = posY * h * 2 + posX * h;
 
         hexagon = new Polygon();
-        int tileSize = 10;
+        int tileSize = 40;
+        w = (int)(Math.sqrt(3) * tileSize / 2);
+        h = tileSize;
 
-        hexagon.addPoint(posX - tileSize/2, posY + tileSize);
-        hexagon.addPoint(posX + tileSize/2, posY + tileSize);
-        hexagon.addPoint(posX + tileSize, posY);
-        hexagon.addPoint(posX + tileSize/2, posY - tileSize);
-        hexagon.addPoint(posX - tileSize/2, posY - tileSize);
-        hexagon.addPoint(posX - tileSize, posY);
+        hexagon.addPoint(X - h/2, Y + w);
+        hexagon.addPoint(X + h/2, Y + w);
+        hexagon.addPoint(X + h, Y);
+        hexagon.addPoint(X + h/2, Y - w);
+        hexagon.addPoint(X - h/2, Y - w);
+        hexagon.addPoint(X - h, Y);
 
         window.addMouseListener(new MouseListener() {
             @Override
