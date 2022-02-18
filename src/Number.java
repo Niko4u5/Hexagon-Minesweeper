@@ -36,8 +36,38 @@ public class Number extends Tile {
      * @return Number of neighboring bombs.
      */
     int calculateNeighbors(){
-        //TODO calculateNeighbors
-        return 0;
+        int i = 0;
+        try {
+            if (world.tiles[posX+1][posY] instanceof Bomb) {
+                i++;
+            }
+            if (world.tiles[posX+1][posY-1] instanceof Bomb) {
+                i++;
+            }
+            if (world.tiles[posX][posY-1] instanceof Bomb) {
+                i++;
+            }
+            if (world.tiles[posX-1][posY] instanceof Bomb) {
+                i++;
+            }
+            if (world.tiles[posX-1][posY+1] instanceof Bomb) {
+                i++;
+            }
+            if (world.tiles[posX][posY+1] instanceof Bomb) {
+                i++;
+            }
+            if(i == 0){
+                world.tiles[posX+1][posY].onClick();
+                world.tiles[posX+1][posY-1].onClick();
+                world.tiles[posX][posY-1].onClick();
+                world.tiles[posX-1][posY].onClick();
+                world.tiles[posX-1][posY+1].onClick();
+                world.tiles[posX][posY+1].onClick();
+            }
+        } catch (ArrayIndexOutOfBoundsException e){}
+
+
+        return i;
     }
 
     @Override
