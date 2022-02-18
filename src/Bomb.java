@@ -20,6 +20,7 @@ public class Bomb extends Tile {
     public void paint(Graphics g) {
         if (!revealed) {
             //TODO: make prettier
+            //TODO: show flags
             g.setColor(Color.red);
             g.fillPolygon(hexagon);
         } else {

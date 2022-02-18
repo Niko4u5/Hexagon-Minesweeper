@@ -13,27 +13,29 @@ public abstract class Tile {
      */
     public Tile(int posX, int posY, MyCanvas window, World world) {
         this.world = world;
+        int spacing = 25;
+        int tileSize = 20;
 
         // Converts array to display position.
-        int spacing = 50;
-        int w = (int)(Math.sqrt(3) * spacing / 2);
-        int h = spacing;
+        int width = (int)(Math.sqrt(3) * spacing / 2);
+        int height = spacing;
+        int X = posX * width * 2;
+        int Y = posY * height * 2 + posX * height;
 
-        int X = posX * w * 2;
-        int Y = posY * h * 2 + posX * h;
-
+        // Calculate hexagon size.
         hexagon = new Polygon();
-        int tileSize = 40;
-        w = (int)(Math.sqrt(3) * tileSize / 2);
-        h = tileSize;
+        width = (int)(Math.sqrt(3) * tileSize / 2);
+        height = tileSize;
 
-        hexagon.addPoint(X - h/2, Y + w);
-        hexagon.addPoint(X + h/2, Y + w);
-        hexagon.addPoint(X + h, Y);
-        hexagon.addPoint(X + h/2, Y - w);
-        hexagon.addPoint(X - h/2, Y - w);
-        hexagon.addPoint(X - h, Y);
+        hexagon.addPoint(X - height/2, Y + width);
+        hexagon.addPoint(X + height/2, Y + width);
+        hexagon.addPoint(X + height, Y);
+        hexagon.addPoint(X + height/2, Y - width);
+        hexagon.addPoint(X - height/2, Y - width);
+        hexagon.addPoint(X - height, Y);
 
+
+        // Add onClick listener.
         window.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {

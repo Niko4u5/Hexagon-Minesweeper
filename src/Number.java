@@ -15,9 +15,11 @@ public class Number extends Tile {
         this.posY = posY;
     }
 
+    /**
+     * Gets called when this hexagon gets clicked.
+     */
     @Override
     public void onClick() {
-
         if (!revealed){
             world.numbers--;
             if (world.numbers == 0){
@@ -32,11 +34,12 @@ public class Number extends Tile {
     }
 
     /**
+     * Returns number of neighboring bombs and reveals neighbors when there are no bombs.
      * @return Number of neighboring bombs.
      */
     int calculateNeighbors(){
         int i = 0;
-        try {
+        try { //TODO: better way of avoiding out of bounds exceptions
             if (world.tiles[posX+1][posY] instanceof Bomb) {
                 i++;
             }
@@ -73,6 +76,7 @@ public class Number extends Tile {
     public void paint(Graphics g) {
         if (!revealed) {
             //TODO: make prettier
+            //TODO: show flags
             g.setColor(Color.red);
             g.fillPolygon(hexagon);
         } else {
