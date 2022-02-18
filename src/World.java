@@ -23,6 +23,7 @@ public class World {
             }
         }
         int bombs = 5;
+        numbers = sizeX * sizeY - bombs;
         while (bombs > 0){
             int i = (int)(Math.random() * sizeX);
             int j = (int)(Math.random() * sizeY);
@@ -32,8 +33,6 @@ public class World {
                 bombs--;
             }
         }
-
-        numbers = sizeX * sizeY - bombs;
     }
 
     public void paint(Graphics g){
