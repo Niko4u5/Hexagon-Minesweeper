@@ -10,6 +10,8 @@ public class World {
 
     final MyCanvas window;
     World(int x, int y,MyCanvas window){
+        //TODO: add empty nodes on the boundaries
+        //TODO: place nodes in a rectangle (optional)
         this.window = window;
         sizeX = x;
         sizeY = y;

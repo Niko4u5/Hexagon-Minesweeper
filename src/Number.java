@@ -7,7 +7,12 @@ public class Number extends Tile {
     int neighbors;
     public Number(int posX, int posY, MyCanvas window, World world) {
         super(posX, posY, window, world);
-        // sets the coordinates of the hexagon
+
+        number = new TextArea();
+        number.setBounds(hexagon.getBounds());
+
+        this.posX = posX;
+        this.posY = posY;
     }
 
     @Override
