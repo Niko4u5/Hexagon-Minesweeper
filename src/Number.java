@@ -24,6 +24,7 @@ public class Number extends Tile {
                 world.win();
             }
             revealed = true;
+            calculateNeighbors();
 
             world.repaint();
         }
