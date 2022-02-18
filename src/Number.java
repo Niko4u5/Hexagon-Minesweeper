@@ -5,8 +5,8 @@ import java.awt.*;
  */
 public class Number extends Tile {
 
-    int posX;
-    int posY;
+    final int posX;
+    final int posY;
 
     public Number(int posX, int posY, MyCanvas window, World world) {
         super(posX, posY, window, world);
