@@ -12,10 +12,19 @@ public class Number extends Tile {
 
     @Override
     public void onClick() {
-        //TODO: subtract 1 from world.numbers if not clicked before
-        revealed = true;
-        neighbors = calculateNeighbors();
-        world.repaint();
+
+        if (!revealed){
+            world.numbers--;
+            if (world.numbers == 0){
+                world.win();
+            }
+            revealed = true;
+            number.setText(Integer.toString(calculateNeighbors()));
+            number.setVisible(true);
+            number.setSize(10,10);
+            world.repaint();
+        }
+
     }
 
     /**

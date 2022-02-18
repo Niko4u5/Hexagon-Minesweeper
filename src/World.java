@@ -30,7 +30,8 @@ public class World {
                 bombs--;
             }
         }
-        //TODO: set numbers variable
+
+        numbers = sizeX * sizeY - bombs;
     }
 
     public void paint(Graphics g){
@@ -46,6 +47,25 @@ public class World {
     public void gameOver(){
         //TODO: show game over screen
         System.out.println("You lost");
+        for (Tile[] tiles: tiles) {
+            for (Tile tile: tiles
+            ) {
+                tile.revealed = true;
+            }
+
+        }
+    }
+
+    public void win(){
+        //TODO: show game over screen
+        System.out.println("You won");
+        for (Tile[] tiles: tiles) {
+            for (Tile tile: tiles
+            ) {
+                tile.revealed = true;
+            }
+
+        }
     }
 
     public void repaint(){
