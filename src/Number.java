@@ -4,6 +4,7 @@ import java.awt.*;
  * Goal of the Game is to click all of these, on Click they show the number of bombs next to them.
  */
 public class Number extends Tile {
+    static final Image img0 = MyCanvas.loadImage("src.png");
 
     final int posX;
     final int posY;

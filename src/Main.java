@@ -1,5 +1,9 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,6 +38,23 @@ class MyCanvas extends Canvas {
         super.paint(g);
         world.paint(g);
 
+    }
+
+    static BufferedImage loadImage(String fileName)
+    {
+        BufferedImage bi = null;
+        //System.err.println("....setimg...." + fileName);
+
+        try {
+            bi = ImageIO.read(new File(fileName));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Image could not be read");
+            System.exit(1);
+        }
+
+        return bi;
     }
 }
 
