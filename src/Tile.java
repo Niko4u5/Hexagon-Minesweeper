@@ -40,9 +40,9 @@ public abstract class Tile {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(hexagon.contains(e.getPoint())){
-                    if(e.getButton() == 1){
+                    if((e.getButton() == 1) && !flagged){
                         onClick();
-                    }else if (e.getButton() == 2){
+                    }else if (e.getButton() == 3){
                         onRightClick();
                     }
                 }
