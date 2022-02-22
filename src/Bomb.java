@@ -4,8 +4,7 @@ import java.awt.*;
  * this Tile is the bomb when clicked it ends the Game.
  */
 public class Bomb extends Tile {
-    //TODO: add proper images
-    static final Image imgBomb = MyCanvas.loadImage("src.png");
+    static final Image imgBomb = MyCanvas.loadImage("Bombe.png");
 
     public Bomb(int posX, int posY, MyCanvas window, World world) {
         super(posX, posY, window, world);

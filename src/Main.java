@@ -35,7 +35,7 @@ class MyCanvas extends Canvas {
     }
 
     public void paint(Graphics g) {
-        this.setBackground(Color.GREEN);
+        this.setBackground(new Color(0,95,243));
         super.paint(g);
         world.paint(g);
 

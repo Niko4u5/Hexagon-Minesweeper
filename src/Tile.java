@@ -2,9 +2,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public abstract class Tile {
-    //TODO: add proper images
-    static final Image img = MyCanvas.loadImage("object.png");
-    static final Image imgFlag = MyCanvas.loadImage("src.png");
+    static final Image img = MyCanvas.loadImage("Leer.png");
+    static final Image imgFlag = MyCanvas.loadImage("Flagge.png");
 
     final World world;
     final Polygon hexagon;
@@ -18,7 +17,7 @@ public abstract class Tile {
     public Tile(int posX, int posY, MyCanvas window, World world) {
         this.world = world;
         int spacing = 25;
-        int tileSize = 20;
+        int tileSize = 25;
 
         // Converts array to display position.
         int width = (int)(Math.sqrt(3) * spacing / 2);
