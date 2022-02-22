@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         MyCanvas canvas = new MyCanvas();
-        World world = new World(7,7, canvas);
+        World world = new World(10,10, canvas);
         canvas.setWorld(world);
     }
 }
@@ -44,7 +44,6 @@ class MyCanvas extends Canvas {
     static BufferedImage loadImage(String fileName)
     {
         BufferedImage bi = null;
-        //System.err.println("....setimg...." + fileName);
 
         try {
             bi = ImageIO.read(new File(fileName));

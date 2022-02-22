@@ -22,7 +22,7 @@ public class World {
                 tiles[i][j] = new Number(i,j,window,this);
             }
         }
-        int bombs = 5;
+        int bombs = 17;
         numbers = sizeX * sizeY - bombs;
         while (bombs > 0){
             int i = (int)(Math.random() * sizeX);

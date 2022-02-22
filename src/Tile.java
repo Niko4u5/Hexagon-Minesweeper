@@ -20,15 +20,13 @@ public abstract class Tile {
         int tileSize = 25;
 
         // Converts array to display position.
-        int width = (int)(Math.sqrt(3) * spacing / 2);
-        int height = spacing;
-        int X = posX * width * 2;
-        int Y = posY * height * 2 + posX * height;
+        int X = (int)(posX * (Math.sqrt(3) * spacing / 2) * 2);
+        int Y = posY * spacing * 2 + posX * spacing;
 
         // Calculate hexagon size.
         hexagon = new Polygon();
-        width = (int)(Math.sqrt(3) * tileSize / 2);
-        height = tileSize;
+        int width = (int)(Math.sqrt(3) * tileSize / 2);
+        int height = tileSize;
 
         hexagon.addPoint(X - height/2, Y + width);
         hexagon.addPoint(X + height/2, Y + width);

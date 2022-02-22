@@ -89,28 +89,21 @@ public class Number extends Tile {
                         hexagon.getBounds().width, hexagon.getBounds().height,null);
             }
         } else {
-            switch (neighbours){
-                case 0: g.drawImage(img0,hexagon.getBounds().x,hexagon.getBounds().y,
-                            hexagon.getBounds().width, hexagon.getBounds().height,null);
-                            break;
-                case 1: g.drawImage(img1,hexagon.getBounds().x,hexagon.getBounds().y,
-                            hexagon.getBounds().width, hexagon.getBounds().height,null);
-                            break;
-                case 2: g.drawImage(img2,hexagon.getBounds().x,hexagon.getBounds().y,
-                            hexagon.getBounds().width, hexagon.getBounds().height,null);
-                            break;
-                case 3: g.drawImage(img3,hexagon.getBounds().x,hexagon.getBounds().y,
-                            hexagon.getBounds().width, hexagon.getBounds().height,null);
-                            break;
-                case 4: g.drawImage(img4,hexagon.getBounds().x,hexagon.getBounds().y,
-                            hexagon.getBounds().width, hexagon.getBounds().height,null);
-                            break;
-                case 5: g.drawImage(img5,hexagon.getBounds().x,hexagon.getBounds().y,
-                            hexagon.getBounds().width, hexagon.getBounds().height,null);
-                            break;
-                case 6: g.drawImage(img6,hexagon.getBounds().x,hexagon.getBounds().y,
-                            hexagon.getBounds().width, hexagon.getBounds().height,null);
-                            break;
+            switch (neighbours) {
+                case 0 -> g.drawImage(img0,hexagon.getBounds().x,hexagon.getBounds().y,
+                        hexagon.getBounds().width, hexagon.getBounds().height,null);
+                case 1 -> g.drawImage(img1, hexagon.getBounds().x, hexagon.getBounds().y,
+                        hexagon.getBounds().width, hexagon.getBounds().height, null);
+                case 2 -> g.drawImage(img2, hexagon.getBounds().x, hexagon.getBounds().y,
+                        hexagon.getBounds().width, hexagon.getBounds().height, null);
+                case 3 -> g.drawImage(img3, hexagon.getBounds().x, hexagon.getBounds().y,
+                        hexagon.getBounds().width, hexagon.getBounds().height, null);
+                case 4 -> g.drawImage(img4, hexagon.getBounds().x, hexagon.getBounds().y,
+                        hexagon.getBounds().width, hexagon.getBounds().height, null);
+                case 5 -> g.drawImage(img5, hexagon.getBounds().x, hexagon.getBounds().y,
+                        hexagon.getBounds().width, hexagon.getBounds().height, null);
+                case 6 -> g.drawImage(img6, hexagon.getBounds().x, hexagon.getBounds().y,
+                        hexagon.getBounds().width, hexagon.getBounds().height, null);
             }
         }
     }
