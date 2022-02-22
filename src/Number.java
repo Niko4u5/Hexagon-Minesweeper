@@ -4,10 +4,19 @@ import java.awt.*;
  * Goal of the Game is to click all of these, on Click they show the number of bombs next to them.
  */
 public class Number extends Tile {
+    //TODO: add proper images
     static final Image img0 = MyCanvas.loadImage("src.png");
+    static final Image img1 = MyCanvas.loadImage("src.png");
+    static final Image img2 = MyCanvas.loadImage("src.png");
+    static final Image img3 = MyCanvas.loadImage("src.png");
+    static final Image img4 = MyCanvas.loadImage("src.png");
+    static final Image img5 = MyCanvas.loadImage("src.png");
+    static final Image img6 = MyCanvas.loadImage("src.png");
+
 
     final int posX;
     final int posY;
+    int neighbours;
 
     public Number(int posX, int posY, MyCanvas window, World world) {
         super(posX, posY, window, world);
@@ -27,7 +36,7 @@ public class Number extends Tile {
                 world.win();
             }
             revealed = true;
-            calculateNeighbors();
+            neighbours = calculateNeighbors();
 
             world.repaint();
         }
@@ -76,14 +85,37 @@ public class Number extends Tile {
     @Override
     public void paint(Graphics g) {
         if (!revealed) {
-            //TODO: make prettier
-            //TODO: show flags
-            g.setColor(Color.red);
-            g.fillPolygon(hexagon);
+            if(flagged){
+                g.drawImage(imgFlag,hexagon.getBounds().x,hexagon.getBounds().y,
+                        hexagon.getBounds().width, hexagon.getBounds().height,null);
+            }else {
+                g.drawImage(img,hexagon.getBounds().x,hexagon.getBounds().y,
+                        hexagon.getBounds().width, hexagon.getBounds().height,null);
+            }
         } else {
-            //TODO: show number
-            g.setColor(Color.blue);
-            g.fillPolygon(hexagon);
+            switch (neighbours){
+                case 0:
+                    g.drawImage(img0,hexagon.getBounds().x,hexagon.getBounds().y,
+                            hexagon.getBounds().width, hexagon.getBounds().height,null);
+                case 1:
+                    g.drawImage(img1,hexagon.getBounds().x,hexagon.getBounds().y,
+                            hexagon.getBounds().width, hexagon.getBounds().height,null);
+                case 2:
+                    g.drawImage(img2,hexagon.getBounds().x,hexagon.getBounds().y,
+                            hexagon.getBounds().width, hexagon.getBounds().height,null);
+                case 3:
+                    g.drawImage(img3,hexagon.getBounds().x,hexagon.getBounds().y,
+                            hexagon.getBounds().width, hexagon.getBounds().height,null);
+                case 4:
+                    g.drawImage(img4,hexagon.getBounds().x,hexagon.getBounds().y,
+                            hexagon.getBounds().width, hexagon.getBounds().height,null);
+                case 5:
+                    g.drawImage(img5,hexagon.getBounds().x,hexagon.getBounds().y,
+                            hexagon.getBounds().width, hexagon.getBounds().height,null);
+                case 6:
+                    g.drawImage(img6,hexagon.getBounds().x,hexagon.getBounds().y,
+                            hexagon.getBounds().width, hexagon.getBounds().height,null);
+            }
         }
     }
 }

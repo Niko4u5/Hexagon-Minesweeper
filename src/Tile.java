@@ -2,6 +2,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 public abstract class Tile {
+    //TODO: add proper images
+    static final Image img = MyCanvas.loadImage("object.png");
+    static final Image imgFlag = MyCanvas.loadImage("src.png");
+
     final World world;
     final Polygon hexagon;
     boolean flagged, revealed;

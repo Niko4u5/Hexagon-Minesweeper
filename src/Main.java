@@ -31,6 +31,7 @@ class MyCanvas extends Canvas {
      */
     public void setWorld(World world) {
         this.world = world;
+        repaint();
     }
 
     public void paint(Graphics g) {
