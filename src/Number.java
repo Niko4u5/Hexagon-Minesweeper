@@ -47,34 +47,32 @@ public class Number extends Tile {
      */
     int calculateNeighbors(){
         int i = 0;
-        try { //TODO: better way of avoiding out of bounds exceptions
-            if (world.tiles[posX+1][posY] instanceof Bomb) {
-                i++;
-            }
-            if (world.tiles[posX+1][posY-1] instanceof Bomb) {
-                i++;
-            }
-            if (world.tiles[posX][posY-1] instanceof Bomb) {
-                i++;
-            }
-            if (world.tiles[posX-1][posY] instanceof Bomb) {
-                i++;
-            }
-            if (world.tiles[posX-1][posY+1] instanceof Bomb) {
-                i++;
-            }
-            if (world.tiles[posX][posY+1] instanceof Bomb) {
-                i++;
-            }
-            if(i == 0){
-                world.tiles[posX+1][posY].onClick();
-                world.tiles[posX+1][posY-1].onClick();
-                world.tiles[posX][posY-1].onClick();
-                world.tiles[posX-1][posY].onClick();
-                world.tiles[posX-1][posY+1].onClick();
-                world.tiles[posX][posY+1].onClick();
-            }
-        } catch (ArrayIndexOutOfBoundsException e){}
+        if (world.getTile(posX+1,posY) instanceof Bomb) {
+            i++;
+        }
+        if (world.getTile(posX+1,posY-1) instanceof Bomb) {
+            i++;
+        }
+        if (world.getTile(posX,posY-1) instanceof Bomb) {
+            i++;
+        }
+        if (world.getTile(posX-1,posY) instanceof Bomb) {
+            i++;
+        }
+        if (world.getTile(posX-1,posY+1) instanceof Bomb) {
+            i++;
+        }
+        if (world.getTile(posX,posY+1) instanceof Bomb) {
+            i++;
+        }
+        if(i == 0){
+            world.getTile(posX+1,posY).onClick();
+            world.getTile(posX+1,posY-1).onClick();
+            world.getTile(posX,posY-1).onClick();
+            world.getTile(posX-1,posY).onClick();
+            world.getTile(posX-1,posY+1).onClick();
+            world.getTile(posX,posY+1).onClick();
+        }
 
 
         return i;

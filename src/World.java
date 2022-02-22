@@ -4,7 +4,7 @@ import java.awt.*;
  * contains all the tiles and manages aces to them.
  */
 public class World {
-    final Tile[][] tiles;
+    final private Tile[][] tiles;
     final int sizeX, sizeY;
     int numbers; // number of tiles that need to be clicked.
 
@@ -33,6 +33,8 @@ public class World {
                 bombs--;
             }
         }
+
+        non = new Empty(0,0,window,this);
     }
 
     public void paint(Graphics g){
@@ -71,5 +73,16 @@ public class World {
 
     public void repaint(){
         window.repaint();
+    }
+
+
+    private final Tile non;
+    public Tile getTile(int xPos, int yPos) {
+        try {
+            return tiles[xPos][yPos];
+        }catch (ArrayIndexOutOfBoundsException e){
+            return non;
+        }
+
     }
 }
