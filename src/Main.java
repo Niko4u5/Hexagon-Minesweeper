@@ -21,6 +21,8 @@ public class Main {
  *  Creates a Window, draws the world and enables onClick methods.
  */
 class MyCanvas extends Canvas {
+    static final Image imgBackground = MyCanvas.loadImage("Bombe.png");
+
     World world;
     public MyCanvas() {
         JFrame window = new JFrame("Example");
@@ -39,11 +41,9 @@ class MyCanvas extends Canvas {
     }
 
     public void paint(Graphics g) {
-        //TODO: set background to picture
-        this.setBackground(new Color(0,95,243));
         super.paint(g);
+        g.drawImage(imgBackground,0,0,getWidth(),getHeight(),null);
         world.paint(g);
-
     }
 
     static BufferedImage loadImage(String fileName)
