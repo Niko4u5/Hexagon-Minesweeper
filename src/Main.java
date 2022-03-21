@@ -8,6 +8,10 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         MyCanvas canvas = new MyCanvas();
+        /*TODO: show start screen with:
+            - difficulty settings
+         */
+
         World world = new World(10,10, canvas);
         canvas.setWorld(world);
     }
@@ -35,6 +39,7 @@ class MyCanvas extends Canvas {
     }
 
     public void paint(Graphics g) {
+        //TODO: set background to picture
         this.setBackground(new Color(0,95,243));
         super.paint(g);
         world.paint(g);
