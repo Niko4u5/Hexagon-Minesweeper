@@ -21,7 +21,7 @@ public class Main {
  *  Creates a Window, draws the world and enables onClick methods.
  */
 class MyCanvas extends Canvas {
-    static final Image imgBackground = MyCanvas.loadImage("Bombe.png");
+    static final Image imgBackground = MyCanvas.loadImage("Hintergrund Blau.png");
 
     World world;
     public MyCanvas() {
