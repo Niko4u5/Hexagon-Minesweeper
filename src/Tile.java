@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public abstract class Tile {
-    static final Image img = MyCanvas.loadImage("Leer.png");
+    static final Image img = MyCanvas.loadImage("Unaufgedeckt.png");
     static final Image imgFlag = MyCanvas.loadImage("Flagge.png");
 
     final World world;
