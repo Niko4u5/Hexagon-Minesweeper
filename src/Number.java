@@ -80,6 +80,8 @@ public class Number extends Tile {
 
     @Override
     public void paint(Graphics g) {
+        super.paint(g);
+
         if (!revealed) {
             if(flagged){
                 g.drawImage(imgFlag,hexagon.getBounds().x,hexagon.getBounds().y,

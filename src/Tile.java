@@ -6,7 +6,8 @@ public abstract class Tile {
     static final Image imgFlag = MyCanvas.loadImage("Flagge.png");
 
     final World world;
-    final Polygon hexagon;
+    final Polygon h;
+    Polygon hexagon;
     boolean flagged, revealed;
     /**
      * Converts array to display position.
@@ -24,18 +25,18 @@ public abstract class Tile {
         int Y = posY * spacing * 2 + posX * spacing;
 
         // Calculate hexagon size.
-        hexagon = new Polygon();
+        h = new Polygon();
         int width = (int)(Math.sqrt(3) * tileSize / 2);
         int height = tileSize;
 
-        hexagon.addPoint(X - height/2, Y + width);
-        hexagon.addPoint(X + height/2, Y + width);
-        hexagon.addPoint(X + height, Y);
-        hexagon.addPoint(X + height/2, Y - width);
-        hexagon.addPoint(X - height/2, Y - width);
-        hexagon.addPoint(X - height, Y);
+        h.addPoint(X - height/2, Y + width);
+        h.addPoint(X + height/2, Y + width);
+        h.addPoint(X + height, Y);
+        h.addPoint(X + height/2, Y - width);
+        h.addPoint(X - height/2, Y - width);
+        h.addPoint(X - height, Y);
 
-
+        hexagon = new Polygon();
         // Add onClick listener.
         window.addMouseListener(new MouseListener() {
             @Override
@@ -71,7 +72,10 @@ public abstract class Tile {
         });
     }
 
-    abstract public void paint(Graphics g);
+    public void paint(Graphics g){
+        hexagon = new Polygon(h.xpoints,h.ypoints,h.npoints);
+        hexagon.translate(world.window.getWidth()/2,world.window.getHeight()/2);
+    }
 
     abstract public void onClick();
     public void onRightClick(){
