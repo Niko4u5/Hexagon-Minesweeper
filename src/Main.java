@@ -21,8 +21,6 @@ public class Main {
  *  Creates a Window, draws the world and enables onClick methods.
  */
 class MyCanvas extends Canvas {
-    static final Image imgBackground = MyCanvas.loadImage("Hintergrund_Blau.png");
-
     World world;
     public MyCanvas() {
         JFrame window = new JFrame("Example");
@@ -42,7 +40,6 @@ class MyCanvas extends Canvas {
 
     public void paint(Graphics g) {
         super.paint(g);
-        g.drawImage(imgBackground,0,0,getWidth(),getHeight(),null); //TODO: change on game over
         world.paint(g);
     }
 
