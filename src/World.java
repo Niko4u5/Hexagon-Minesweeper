@@ -17,6 +17,7 @@ public class World extends Scene{
 
     final MyCanvas window;
     World(int x, int y,MyCanvas window){
+        super(window);
         //TODO: Difficulty settings
         //TODO: place nodes in a rectangle and centered on the screen
         this.window = window;

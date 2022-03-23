@@ -8,7 +8,8 @@ public class Start extends Scene{
          */
 
     Start(MyCanvas window){
-        window.addMouseListener(new MouseListener() {
+        super(window);
+        MouseListener l = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 window.setScene(new World(10,10, window));
@@ -32,8 +33,9 @@ public class Start extends Scene{
             @Override
             public void mouseExited(MouseEvent e) {
 
-            }
-        });
+            }};
+        listeners.add(l);
+        window.addMouseListener(l);
     }
 
     @Override

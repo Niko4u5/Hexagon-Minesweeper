@@ -24,6 +24,9 @@ class MyCanvas extends Canvas {
      * @param scene sets the world that is going to be drawn on this canvas
      */
     public void setScene(Scene scene) {
+        if(this.scene != null){
+            this.scene.deconstruct();
+        }
         this.scene = scene;
         repaint();
     }
