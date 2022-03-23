@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.Time;
 
 /**
  * contains all the tiles and manages aces to them.
@@ -9,6 +10,7 @@ public class World extends Scene{
     final private Tile[][] tiles;
     final int sizeX, sizeY;
     int numbers; // number of tiles that need to be clicked.
+    long startTime;
 
     private boolean gameOver = false;
     static final Image imgBackground = MyCanvas.loadImage("Hintergrund_Blau.png");
@@ -21,6 +23,8 @@ public class World extends Scene{
         //TODO: Difficulty settings
         //TODO: place nodes in a rectangle and centered on the screen
         this.window = window;
+        startTime = System.currentTimeMillis();
+
         sizeX = x;
         sizeY = y;
         tiles = new Tile[sizeX][sizeY];
@@ -67,9 +71,9 @@ public class World extends Scene{
         // clear area for text
         g.clearRect(window.getWidth()/2-200,2,400,20);
 
-        // Write to area
+        // Write game info
         g.drawString(Integer.toString(numbers),window.getWidth()/2-200,20);
-        //TODO: Time
+        g.drawString(Long.toString(startTime-System.currentTimeMillis()),window.getWidth()/2-100,20);
         //TODO: Make pretty
 
         // Show game over screen
