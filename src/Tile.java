@@ -38,7 +38,7 @@ public abstract class Tile {
 
         hexagon = new Polygon();
         // Add onClick listener.
-        window.addMouseListener(new MouseListener() {
+        MouseListener l = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(hexagon.contains(e.getPoint())){
@@ -69,7 +69,9 @@ public abstract class Tile {
             public void mouseExited(MouseEvent e) {
 
             }
-        });
+        };
+        world.listeners.add(l);
+        window.addMouseListener(l);
     }
 
     public void paint(Graphics g){

@@ -87,12 +87,11 @@ public class World extends Scene{
             }
         }
         gameOver = true;
-        window.addMouseListener(new MouseListener() {
+
+        MouseListener l = new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                //TODO: go to start screen
-
-                System.exit(1);
+                window.setScene(new Start(window));
             }
 
             @Override
@@ -114,7 +113,9 @@ public class World extends Scene{
             public void mouseExited(MouseEvent e) {
 
             }
-        });
+        };
+        listeners.add(l);
+        window.addMouseListener(l);
     }
 
     public void win(){
