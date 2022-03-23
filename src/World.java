@@ -5,7 +5,7 @@ import java.awt.event.MouseListener;
 /**
  * contains all the tiles and manages aces to them.
  */
-public class World {
+public class World extends Scene{
     final private Tile[][] tiles;
     final int sizeX, sizeY;
     int numbers; // number of tiles that need to be clicked.
