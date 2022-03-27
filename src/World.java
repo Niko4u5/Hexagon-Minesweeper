@@ -9,7 +9,8 @@ import java.sql.Time;
 public class World extends Scene{
     final private Tile[][] tiles;
     final int sizeX, sizeY;
-    int numbers; // number of tiles that need to be clicked.
+    /** number of tiles that need to be clicked. */
+    int numbers;
     long startTime;
 
     private boolean gameOver = false;
@@ -120,6 +121,8 @@ public class World extends Scene{
         };
         listeners.add(l);
         window.addMouseListener(l);
+
+        repaint();
     }
 
     public void win(){

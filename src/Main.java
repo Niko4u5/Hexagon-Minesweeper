@@ -4,13 +4,13 @@ public class Main {
         window.setScene(new Start(window));
 
         long start = System.currentTimeMillis();
-        while (true){
+        /*while (true){
             if((System.currentTimeMillis()-start)>500){
                 start = System.currentTimeMillis();
                 window.repaint();
             }
 
-        }
+        }*/
     }
 }
 

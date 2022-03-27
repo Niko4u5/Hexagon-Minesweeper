@@ -65,6 +65,7 @@ public class Number extends Tile {
         if (world.getTile(posX,posY+1) instanceof Bomb) {
             i++;
         }
+
         if(i == 0){
             world.getTile(posX+1,posY).onClick();
             world.getTile(posX+1,posY-1).onClick();
@@ -73,7 +74,6 @@ public class Number extends Tile {
             world.getTile(posX-1,posY+1).onClick();
             world.getTile(posX,posY+1).onClick();
         }
-
 
         return i;
     }

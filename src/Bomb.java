@@ -15,7 +15,6 @@ public class Bomb extends Tile {
         //TODO: first click no bomb
         revealed = true;
         world.gameOver();
-        world.repaint();
     }
 
     @Override

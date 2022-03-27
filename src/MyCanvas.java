@@ -9,11 +9,13 @@ import java.io.IOException;
  * Creates a Window, draws the current scene and enables onClick methods.
  */
 class MyCanvas extends Canvas {
+    static final Image icon = loadImage("6.png"); //TODO: replace icon
     Scene scene;
 
     public MyCanvas() {
         // create the window this Canvas is Drawn in
-        JFrame window = new JFrame("Example");
+        JFrame window = new JFrame("HexagonMinesweeper");
+        window.setIconImage(icon);
         window.add(this);
         window.setVisible(true);
         window.setSize(500, 500);
